@@ -101,6 +101,10 @@ Find vacancies 'Manual automation engineer' on the site work.ua
     In vacancy list open each vacancy and view it
     #add a self-test
 
+my super test
+    [Tags]    super
+    log to console    great automation on robot framefork
+
 
 
 
