@@ -1,0 +1,38 @@
+# home #
+button_exit = "//button[text()='Вийти']"
+user_email = "//p[@id='id-user-email']"
+login_frame = "//iframe[@name='mail widget']"
+checkbox = "//label[@class='form__checkbox-label']"
+button_next = "//button[@class='form__submit']"
+email_field = "//input[@id='id-input-login'] "
+password_field = "//input[@id='id-input-password']"
+inset_currency = "//li[text()='Валюта']"
+dollar_rate = "//div[text()='usd']//following-sibling::div/b"
+uah_rate = "//input[@name='grn']"
+main_page = "//a[text()='Головне']"
+health_page = "//a[text()='Здоров’я']"
+link_oracle = "//li[text()='Оракул']"
+zodiac_sign = "//a[@title='Козоріг (22.12 - 20.01)']"
+weather_frame = "//iframe[@name='weather widget']"
+city_search = "//div[@id='CityName']"
+field_search = "//input[@id='searchInput']"
+link_10_days = "//a[text()='10 днів']"
+weather_for_10days = "//div[contains(@class,'main')]"    #and contains(@id,'bd')
+weather_description = "(//div[@class='description'])[1]"
+link_movie_poster = "//a[text()='Кіноафіша']"
+header_burger_menu = "//header[@class='header_main']//li[@class='header__menu__submenu']"
+drop_down_link_persons = "//header[@class='header_main']//a[text()='Персони']"
+search_for_persons_field = "//input[@placeholder='Пошук по акторам']"
+
+
+# mail #
+link_incoming = "//a[text()='Вхідні']"
+burger_menu = "//button[@class='login-button__control']"
+link_signature = "//a[text()='Ім’я відправника та підпис']"
+field_for_signature = "//textarea[@name='signature']"
+button_save_change = "//button[@type='submit']"
+button_to_write_a_letter = "//button[text()='Написати листа']"
+
+link_yet = "//a[text()='Ще']"
+drop_down_menu_link_note_how_important = "//a[text()='Відмітити як важливе']"
+menu_link_marked = "//span[text()='Відмічені']"

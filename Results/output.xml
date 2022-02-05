@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20220130 17:02:19.517" rpa="false" schemaversion="2">
+<suite id="s1" name="Ukr Net" source="C:\Users\eugene.onopriienko\PycharmProjects\KR\tests\ukr_net.robot">
+<test id="s1-t1" name="Find vacancies 'Manual automation engineer' on the site work.ua">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${site}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220130 17:02:20.267" level="INFO">Opening browser 'chrome' to base url 'https://www.ukr.net'.</msg>
+<status status="PASS" starttime="20220130 17:02:20.265" endtime="20220130 17:02:48.604"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220130 17:02:48.606" endtime="20220130 17:02:48.867"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//a[text()='Work.ua']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220130 17:02:48.869" endtime="20220130 17:02:50.303"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[text()='Work.ua']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220130 17:02:50.304" level="INFO">Clicking element '//a[text()='Work.ua']'.</msg>
+<status status="PASS" starttime="20220130 17:02:50.303" endtime="20220130 17:02:50.487"/>
+</kw>
+<kw name="switch to opened new tab in browser" library="home_KW">
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>@{windows}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20220130 17:02:50.521" level="INFO">@{windows} = [ CDwindow-EA7D6015E9916CE2C936452E41D48AA4 | CDwindow-B837C9519738BF3EF21577A3D5AD5834 ]</msg>
+<status status="PASS" starttime="20220130 17:02:50.493" endtime="20220130 17:02:50.521"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${numWindows}</var>
+<arg>${windows}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20220130 17:02:50.522" level="INFO">Length is 2</msg>
+<msg timestamp="20220130 17:02:50.522" level="INFO">${numWindows} = 2</msg>
+<status status="PASS" starttime="20220130 17:02:50.521" endtime="20220130 17:02:50.522"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${indexLast}</var>
+<arg>${numWindows}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220130 17:02:50.524" level="INFO">${indexLast} = 1</msg>
+<status status="PASS" starttime="20220130 17:02:50.522" endtime="20220130 17:02:50.525"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${numWindows} &gt; 1</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220130 17:02:50.525" endtime="20220130 17:02:50.526"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${windows}[${indexLast}]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220130 17:02:50.526" endtime="20220130 17:02:50.982"/>
+</kw>
+<status status="PASS" starttime="20220130 17:02:50.492" endtime="20220130 17:02:50.983"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//a[contains(text(), 'Розширений пошук')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220130 17:02:50.986" endtime="20220130 17:02:52.835"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[contains(text(), 'Розширений пошук')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220130 17:02:52.839" level="INFO">Clicking element '//a[contains(text(), 'Розширений пошук')]'.</msg>
+<status status="PASS" starttime="20220130 17:02:52.838" endtime="20220130 17:02:54.923"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//input[@id='city']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220130 17:02:54.923" endtime="20220130 17:02:54.980"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id='city']</arg>
+<arg>Київ</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220130 17:02:54.982" level="INFO">Typing text 'Київ' into text field '//input[@id='city']'.</msg>
+<status status="PASS" starttime="20220130 17:02:54.981" endtime="20220130 17:02:55.203"/>
+</kw>
+<kw name="select checkbox for" library="home_KW">
+<arg>Повна зайнятість</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//span[text()='${type_of_employment}']//preceding-sibling::input[@type='checkbox']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220130 17:02:55.207" endtime="20220130 17:02:55.259"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//span[text()='${type_of_employment}']//preceding-sibling::input[@type='checkbox']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220130 17:02:55.260" level="INFO">Clicking element '//span[text()='Повна зайнятість']//preceding-sibling::input[@type='checkbox']'.</msg>
+<status status="PASS" starttime="20220130 17:02:55.259" endtime="20220130 17:02:55.469"/>
+</kw>
+<status status="PASS" starttime="20220130 17:02:55.207" endtime="20220130 17:02:55.470"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220130 17:02:56.486" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220130 17:02:55.471" endtime="20220130 17:02:56.486"/>
+</kw>
+<kw name="select checkbox for" library="home_KW">
+<arg>Дистанційна робота</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//span[text()='${type_of_employment}']//preceding-sibling::input[@type='checkbox']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220130 17:02:56.577" endtime="20220130 17:02:57.070"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//span[text()='${type_of_employment}']//preceding-sibling::input[@type='checkbox']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220130 17:02:57.072" level="INFO">Clicking element '//span[text()='Дистанційна робота']//preceding-sibling::input[@type='checkbox']'.</msg>
+<status status="PASS" starttime="20220130 17:02:57.071" endtime="20220130 17:02:58.331"/>
+</kw>
+<status status="PASS" starttime="20220130 17:02:56.576" endtime="20220130 17:02:58.332"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>//label[text()='Інше']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220130 17:02:58.357" endtime="20220130 17:02:58.840"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>salaryfrom_selection</arg>
+<arg>6</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20220130 17:02:58.842" level="INFO">Selecting options from selection list 'salaryfrom_selection' by index 6.</msg>
+<status status="PASS" starttime="20220130 17:02:58.841" endtime="20220130 17:02:59.134"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>//a[@id='logo']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20220130 17:02:59.134" endtime="20220130 17:02:59.889"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//input[@name='search']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220130 17:02:59.901" endtime="20220130 17:03:00.188"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name='search']</arg>
+<arg>manual automation engineer</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220130 17:03:00.189" level="INFO">Typing text 'manual automation engineer' into text field '//input[@name='search']'.</msg>
+<status status="PASS" starttime="20220130 17:03:00.188" endtime="20220130 17:03:00.713"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>//input[@name='search']</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220130 17:03:00.715" level="INFO">Sending key(s) ('ENTER',) to //input[@name='search'] element.</msg>
+<msg timestamp="20220130 17:03:01.034" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20220130 17:03:01.035" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20220130 17:03:00.714" endtime="20220130 17:03:01.170"/>
+</kw>
+<kw name="In vacancy list open each vacancy and view it" library="home_KW">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//h2/a</arg>
+<arg>timeout= 30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220130 17:03:01.195" endtime="20220130 17:03:01.270"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{TICKET_ABBR}</var>
+<arg>//h2/a</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220130 17:03:02.080" level="INFO">@{TICKET_ABBR} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="654debcd76e82a7a292d119e4ef6bdeb", element="baac60f7-34a3-420d-88fa-3d07eab01675")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" starttime="20220130 17:03:01.271" endtime="20220130 17:03:02.080"/>
+</kw>
+<for flavor="IN">
+<var>${item}</var>
+<value>@{TICKET_ABBR}</value>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="654debcd76e82a7a292d119e4ef6bdeb", element="baac60f7-34a3-420d-88fa-3d07eab01675")&gt;</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${item}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220130 17:03:02.082" endtime="20220130 17:03:02.082"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>click element</arg>
+<arg>${item}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${item}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220130 17:03:02.083" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="654debcd76e82a7a292d119e4ef6bdeb", element="baac60f7-34a3-420d-88fa-3d07eab01675")&gt;'.</msg>
+<status status="PASS" starttime="20220130 17:03:02.083" endtime="20220130 17:03:05.333"/>
+</kw>
+<status status="PASS" starttime="20220130 17:03:02.082" endtime="20220130 17:03:05.334"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220130 17:03:07.337" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220130 17:03:05.334" endtime="20220130 17:03:07.337"/>
+</kw>
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" starttime="20220130 17:03:07.338" endtime="20220130 17:03:08.677"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0,500)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220130 17:03:08.678" level="INFO">Executing JavaScript:
+window.scrollBy(0,500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220130 17:03:08.677" endtime="20220130 17:03:08.792"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220130 17:03:10.806" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220130 17:03:08.793" endtime="20220130 17:03:10.806"/>
+</kw>
+<status status="PASS" starttime="20220130 17:03:02.080" endtime="20220130 17:03:10.806"/>
+</iter>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="654debcd76e82a7a292d119e4ef6bdeb", element="10bf1507-0268-4d24-8cbb-43448d5517b0")&gt;</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${item}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220130 17:03:10.807" endtime="20220130 17:03:10.808"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>click element</arg>
+<arg>${item}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${item}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220130 17:03:10.809" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="654debcd76e82a7a292d119e4ef6bdeb", element="10bf1507-0268-4d24-8cbb-43448d5517b0")&gt;'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220130 17:03:11.072" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-81.png"&gt;&lt;img src="selenium-screenshot-81.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220130 17:03:10.828" endtime="20220130 17:03:11.072"/>
+</kw>
+<msg timestamp="20220130 17:03:11.078" level="FAIL">StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=97.0.4692.99)
+</msg>
+<status status="FAIL" starttime="20220130 17:03:10.808" endtime="20220130 17:03:11.078"/>
+</kw>
+<status status="FAIL" starttime="20220130 17:03:10.808" endtime="20220130 17:03:11.078"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220130 17:03:11.079" endtime="20220130 17:03:11.079"/>
+</kw>
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="NOT RUN" starttime="20220130 17:03:11.079" endtime="20220130 17:03:11.079"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0,500)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20220130 17:03:11.079" endtime="20220130 17:03:11.079"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220130 17:03:11.079" endtime="20220130 17:03:11.079"/>
+</kw>
+<status status="FAIL" starttime="20220130 17:03:10.806" endtime="20220130 17:03:11.079"/>
+</iter>
+<status status="FAIL" starttime="20220130 17:03:02.080" endtime="20220130 17:03:11.080"/>
+</for>
+<status status="FAIL" starttime="20220130 17:03:01.194" endtime="20220130 17:03:11.080"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220130 17:03:11.081" endtime="20220130 17:03:15.483"/>
+</kw>
+<doc>Check the possibility to find vacancies 'Manual automation engeneer' on the site work.ua</doc>
+<tag>vacancies_manual_automation_engineer</tag>
+<status status="FAIL" starttime="20220130 17:02:20.264" endtime="20220130 17:03:15.484">StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=97.0.4692.99)
+</status>
+</test>
+<doc>Testing home page for site ukr.net</doc>
+<status status="FAIL" starttime="20220130 17:02:19.524" endtime="20220130 17:03:15.487"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">vacancies_manual_automation_engineer</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Ukr Net">Ukr Net</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
